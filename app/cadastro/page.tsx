@@ -12,29 +12,40 @@ export default function LoginPage() {
 
         {/* USO DO FORM PARA PEGAR AS INFORMAÇÕES (PRECISA COLOCAR METHOD: POST) */}
         <form action="/login" method="POST" className="pt-6 w-full px-8">
-          {/* WRAPPER DO EMAIL E SENHA PARA COLOCAR NO START */}
+          {/* WRAPPER DO EMAIL, SENHA & NICK PARA COLOCAR NO START */}
           <div className="flex flex-col justify-start items-start gap-2">
-            {/* EMAIL */}
-            <h2 className="font-bold">Email</h2>
+
+            {/* NICK DO MINECRAFT */}
+            <h2 className="">Nick do Minecraft</h2>
             <input
-              className="p-2 bg-gray-900 border border-gray-800 rounded-xl w-full hover:border-purple-500/60 focus:border-purple-500/60 focus:outline-none"
+              className="p-2 bg-gray-900 border font-extralight border-gray-800 rounded-xl w-full hover:border-purple-500/60 focus:border-purple-500/60 focus:outline-none text-purple-200"
+              placeholder="SeuNick1234"
+              type="text"
+
+            />
+
+            {/* EMAIL */}
+            <h2 className="pt-2">Email</h2>
+            <input
+              className="p-2 bg-gray-900 border font-extralight border-gray-800 rounded-xl w-full hover:border-purple-500/60 focus:border-purple-500/60 focus:outline-none text-purple-200"
               placeholder="Digite seu @email.com"
               type="text"
             />
 
             {/* SENHA */}
-            <h2 className="font-bold pt-6">Senha</h2>
+            <h2 className="pt-6">Senha</h2>
             <input
-              className="p-2 bg-gray-900 border border-gray-800 rounded-xl w-full hover:border-purple-500/60 focus:border-purple-500/60 focus:outline-none"
+              className="p-2 bg-gray-900 border border-gray-800 font-light rounded-xl w-full hover:border-purple-500/60 focus:border-purple-500/60 focus:outline-none text-purple-200"
               placeholder="Digite sua senha"
               type="password"
             />
           </div>
         </form>
+
         {/* BOTÃO DE LOGIN */}
         <div className="pt-6 w-full px-8">
-          <button 
-          className="px-4 bg-purple-700 font-bold py-2 rounded-xl w-full hover:scale-102 duration-300">
+          <button
+            className="px-4 bg-purple-700 font-bold py-2 rounded-xl w-full hover:scale-102 duration-300">
             Entrar
           </button>
         </div>
