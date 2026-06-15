@@ -1,14 +1,9 @@
 export default function NavbarCelestium() {
   return (
     // TELA BACKGROUND 
-    <div className="bg-gray-950 w-screen h-22 flex items-center justify-center">
+    <div className="bg-gray-950 w-screen h-22 flex items-center justify-between px-40">
       {/* PARTE DO LOGO */}
-      <div className="flex items-center justify-center gap-1 px-8">
-        <img
-          src="/celestium/logo.png"
-          alt="Logo"
-          className="w-8 h-8"
-        />
+      <div className="flex items-center justify-center gap">
         <span className="text-white text-lg font-bold">Celestium</span> <span className="text-purple-500 text-lg font-bold">MC</span>
       </div>
 
@@ -25,10 +20,10 @@ export default function NavbarCelestium() {
       <div className="flex items-center justify-center px-8">
         <img src="/usuario.png" alt="User Icon" className="w-4 h-4 invert" />
         <button className="text-gray-300 text-sm font-bold rounded-md px-4 py-1 transition-colors duration-400 hover:text-white">Entrar</button>
-        <button className="text-white text-sm font-bold rounded-md px-4 py-2 bg-purple-500 transition-colors duration-300">Login</button>
+        <button className="text-white text-sm font-bold rounded-md px-4 py-2 bg-purple-500 transition-colors duration-300">Cadastrar</button>
 
         <div className="text-white text-sm font-bold rounded-md px-4 py-2 bg-blue-500 transition-colors duration-300 ml-2 flex-row flex">
-          <img src="/Design sem nome.png" alt="" className="w-4 h-4" />
+          <img src="/Discord.png" alt="" className="w-5 h-5 invert mr-2 flex justify-center items-center" />
           <button className="">Discord</button>
         </div>
       </div>
