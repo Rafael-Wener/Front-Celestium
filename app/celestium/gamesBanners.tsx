@@ -1,4 +1,4 @@
-export default function GamesBanner() {
+export default function GamesBannerCelestium() {
     return (
         <div className="">
 

@@ -1,3 +1,4 @@
+import GamesBannerCelestium from "./gamesBanners";
 import HeaderCelestium from "./header";
 import NavbarCelestium from "./navbar";
 
@@ -6,6 +7,7 @@ export default function CelestiumPage() {
     <div className="flex flex-col items-center justify-center font-sans">      
       <NavbarCelestium />
       <HeaderCelestium />
+      <GamesBannerCelestium />
     </div>
   );
 }
