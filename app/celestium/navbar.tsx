@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function NavbarCelestium() {
   return (
     // TELA BACKGROUND 
@@ -19,13 +21,18 @@ export default function NavbarCelestium() {
       {/* PARTE DO LOGIN */}
       <div className="flex items-center justify-center px-8">
         <img src="/usuario.png" alt="User Icon" className="w-4 h-4 invert" />
+        <Link href="/login">
         <button className="text-gray-300 text-sm font-bold rounded-md px-4 py-1 transition-colors duration-400 hover:text-white">Entrar</button>
+        </Link>
+        <Link href="/cadastro">
         <button className="text-white text-sm font-bold rounded-md px-4 py-2 bg-purple-500 transition-colors duration-300">Cadastrar</button>
-
+        </Link>
+        <Link href="https://discord.com/">
         <div className="text-white text-sm font-bold rounded-md px-4 py-2 bg-blue-500 transition-colors duration-300 ml-2 flex-row flex">
           <img src="/Discord.png" alt="" className="w-5 h-5 invert mr-2 flex justify-center items-center" />
           <button className="">Discord</button>
         </div>
+        </Link>
       </div>
     </div>
   );

@@ -6,7 +6,6 @@ export default function CelestiumPage() {
     <div className="flex flex-col items-center justify-center font-sans">      
       <NavbarCelestium />
       <HeaderCelestium />
-
     </div>
   );
 }
