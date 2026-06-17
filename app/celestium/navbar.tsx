@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function NavbarCelestium() {
   return (
     // TELA BACKGROUND 
-    <div className="bg-gray-950 w-screen h-22 flex items-center justify-between px-40">
+    <div className="bg-gray-950 w-full h-22 flex items-center justify-between px-40">
       {/* PARTE DO LOGO */}
       <div className="flex items-center justify-center gap">
         <span className="text-white text-lg font-bold">Celestium</span> <span className="text-purple-500 text-lg font-bold">MC</span>

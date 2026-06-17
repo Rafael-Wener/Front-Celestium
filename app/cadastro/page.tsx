@@ -1,4 +1,4 @@
-export default function LoginPage() {
+export default function RegisterPage() {
   return (
     // TELA WRAPPER + BACKGROUND CONFIG
     <div className="flex flex-col flex-1 items-center justify-center bg-gradient-to-t from-purple-950/70 to-purple-950/10">
