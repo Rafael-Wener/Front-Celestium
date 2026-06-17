@@ -1,6 +1,8 @@
+import DiscordCelestium from "./DiscordBanners";
+import FooterCeslestium from "./FooterCelestium";
 import GamesBannerCelestium from "./GamesBanners";
-import HeaderCelestium from "./header";
-import NavbarCelestium from "./navbar";
+import HeaderCelestium from "./HeaderCelestium";
+import NavbarCelestium from "./NavbarCelestium";
 
 export default function CelestiumPage() {
   return (
@@ -8,7 +10,8 @@ export default function CelestiumPage() {
       <NavbarCelestium />
       <HeaderCelestium />
       <GamesBannerCelestium />
-      
+      <DiscordCelestium />
+      <FooterCeslestium />
     </div>
   );
 }
