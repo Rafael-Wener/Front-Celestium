@@ -1,6 +1,6 @@
 import DiscordCelestium from "./DiscordBanners";
 import FooterCeslestium from "./FooterCelestium";
-import GamesBannerCelestium from "./GamesBanners";
+import GamesBannerCelestium from "./gamesBanners";
 import HeaderCelestium from "./HeaderCelestium";
 import NavbarCelestium from "./NavbarCelestium";
 

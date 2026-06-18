@@ -46,7 +46,7 @@ export default function HeaderCelestium() {
         </div>
 
         {/* SEÇÃO DE FEATURES DO SITE WRAPPER*/}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-40 mt-16 pt-8 border-t border-purple-950/40">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-60 mt-16 pt-8 border-t border-purple-950/40">
 
           {/* AMBIENTE SEGURO */}
           <div className="flex items-center gap-3 justify-center md:justify-start">
