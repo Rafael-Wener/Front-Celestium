@@ -27,21 +27,21 @@ export default function FooterCeslestium() {
                     <div className="flex flex-row items-center justify-center gap-6 mt-4">
                         {/* ICONES/DISCORD */}
                         <Link href="https://discord.gg/MF2m9DE8s">
-                            <button className="flex items-center justify-center bg-purple-950/60 w-8 h-8 rounded-md mt-2 hover:bg-purple-800 transition-all duration-300 hover:scale-110">
+                            <button className="flex items-center justify-center bg-purple-950/60 w-8 h-8 rounded-md mt-2 hover:bg-purple-800 transition-all duration-300 hover:scale-110 cursor-pointer">
                                 <img src="/Discord.png" alt="Discord" className="invert w-6 h-6" />
                             </button>
                         </Link>
 
                         {/* ICONES/INSTAGRAM */}
                         <Link href="https://www.instagram.com/celestiummc?igsh=MTBydGh1Ymd1bzBxcQ==">
-                            <button className="flex items-center justify-center bg-purple-950/60 w-8 h-8 rounded-md mt-2 hover:bg-purple-800 transition-all duration-300 hover:scale-110">
+                            <button className="flex items-center justify-center bg-purple-950/60 w-8 h-8 rounded-md mt-2 hover:bg-purple-800 transition-all duration-300 hover:scale-110 cursor-pointer">
                                 <img src="/instagram.png" alt="Discord" className="invert w-5 h-5" />
                             </button>
                         </Link>
 
                         {/* ICONES/TIK TOK */}
                         <Link href="https://www.tiktok.com/@celestium.mc3?_r=1&_t=ZS-97IL9lCHUIL">
-                            <button className="flex items-center justify-center bg-purple-950/60 w-8 h-8 rounded-md mt-2 hover:bg-purple-800 transition-all duration-300 hover:scale-110">
+                            <button className="flex items-center justify-center bg-purple-950/60 w-8 h-8 rounded-md mt-2 hover:bg-purple-800 transition-all duration-300 hover:scale-110 cursor-pointer">
                                 <img src="/tik-tok.png" alt="Discord" className="invert w-5 h-5" />
                             </button>
                         </Link>
@@ -52,44 +52,46 @@ export default function FooterCeslestium() {
                 {/* PARTE DA NAVEGAÇÃO DO FOTTER */}
                 <div className="flex flex-row gap-80 ">
                     <div className="flex items-start justify-center flex-col gap-4">
+                        {/* TITULO NAVEGAÇÃO */}
                         <div className="font-bold font-sans text-sm i">NAVEGAÇÃO</div>
-                        <div className="flex flex-col items-start justify-center gap-2 text-xs text-gray-400 ">
-                            <button className="hover:text-purple-400/90">Início</button>
-                            <Link href="loja">
-                                <button className="hover:text-purple-400/90">Loja</button>
+                        {/* SUBCONTEUDOS */}
+                        <div className="flex flex-col items-start justify-center gap-2 text-xs text-gray-400">
+                            <button className="hover:text-purple-400/90 cursor-pointer">Início</button>
+                            <Link href="/loja">
+                                <button className="hover:text-purple-400/90 cursor-pointer">Loja</button>
                             </Link>
-                            <button className="hover:text-purple-400/90">Modos</button>
-                            <Link href="/https://discord.gg/MF2m9DE8s">
-                                <button className="hover:text-purple-400/90">Discord</button>
+                            <button className="hover:text-purple-400/90 cursor-pointer">Modos</button>
+                            <Link href="https://discord.gg/MF2m9DE8s">
+                                <button className="hover:text-purple-400/90 cursor-pointer">Discord</button>
                             </Link>
-                        </div>
-                    </div>
-
-                    {/* PARTE DAS FORMAS DE PAGAMENTO DO FOOTER */}
-                    <div className="flex flex-row gap-80 ">
-                        <div className="flex items-start justify-center flex-col gap-4">
-                            <div className="font-bold font-sans text-sm i">INFORMAÇÕES</div>
-                            <div className="flex flex-col items-start justify-center gap-2 text-xs text-gray-400 ">
-                                <Link href="/celestium">
-                                    <button className="hover:text-purple-400/90">Termos de Uso</button>
-                                </Link>
-                                <Link href="loja">
-                                    <button className="hover:text-purple-400/90">Política de Privacidade</button>
-                                </Link>
-                                <button className="hover:text-purple-400/90">FAQ</button>
-                                <button className="hover:text-purple-400/90">Regras</button>
-                            </div>
                         </div>
                     </div>
 
                     {/* PARTE DAS INFORMAÇÕES DO FOOTER */}
                     <div className="flex flex-row gap-80 ">
                         <div className="flex items-start justify-center flex-col gap-4">
+                            <div className="font-bold font-sans text-sm i">INFORMAÇÕES</div>
+                            <div className="flex flex-col items-start justify-center gap-2 text-xs text-gray-400 ">
+                                <Link href="/celestium">
+                                    <button className="hover:text-purple-400/90 cursor-pointer">Termos de Uso</button>
+                                </Link>
+                                <Link href="">
+                                    <button className="hover:text-purple-400/90 cursor-pointer">Política de Privacidade</button>
+                                </Link>
+                                <button className="hover:text-purple-400/90 cursor-pointer">FAQ</button>
+                                <button className="hover:text-purple-400/90 cursor-pointer">Regras</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* PARTE DAS PAGAMENTO DO FOOTER */}
+                    <div className="flex flex-row gap-80 ">
+                        <div className="flex items-start justify-center flex-col gap-4">
                             <div className="font-bold font-sans text-sm i">PAGAMENTOS</div>
                             <div className="flex flex-row items-start justify-center gap-2 text-xs text-gray-400 ">
-                                <img src="/paypal.png" alt="" className="h-8 w-8" />
-                                <img src="/visa.png" alt="" className="h-8 w-8" />
-                                <img src="/cartao.png" alt="" className="h-6 w-10" />
+                                <img src="/paypal.png" alt="" className="h-8 w-8 cursor-pointer" />
+                                <img src="/visa.png" alt="" className="h-8 w-8 cursor-pointer" />
+                                <img src="/cartao.png" alt="" className="h-6 w-10 cursor-pointer" />
                             </div>
                             <div className="border border-purple-900 rounded-md gap-2 bg-purple-950/60 p-2 text-xs">
                                 <h3 className="font-bold text-xs text-gray-400">COMPRA 100% SEGURA</h3>

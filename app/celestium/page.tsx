@@ -1,16 +1,16 @@
-import DiscordCelestium from "./DiscordBanners";
 import FooterCeslestium from "./FooterCelestium";
-import GamesBannerCelestium from "./gamesBanners";
 import HeaderCelestium from "./HeaderCelestium";
 import NavbarCelestium from "./NavbarCelestium";
+import GameModesCelestium from "./GameModes";
+import LoginReminderCelestium from "./LoginReminder";
 
 export default function CelestiumPage() {
   return (
     <div className="flex flex-col items-center justify-center font-sans">      
       <NavbarCelestium />
       <HeaderCelestium />
-      <GamesBannerCelestium />
-      <DiscordCelestium />
+      <LoginReminderCelestium />
+      <GameModesCelestium />
       <FooterCeslestium />
     </div>
   );
