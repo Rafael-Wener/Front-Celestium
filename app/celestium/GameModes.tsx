@@ -1,3 +1,4 @@
+
 export default function GameModesCelestium() {
     return (
         // TELA WRAPPER E BACKGROUND
@@ -56,6 +57,8 @@ export default function GameModesCelestium() {
                         <img src="/sinal-de-seta-para-baixo-para-navegar.png" alt="seta de mais" className="h-4 w-4 invert flex"/>
                     </div>
                 </button>
+
+                <div></div>
             </div>
         </div>
     )
