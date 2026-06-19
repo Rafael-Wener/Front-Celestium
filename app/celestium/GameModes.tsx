@@ -9,7 +9,7 @@ export default function GameModesCelestium() {
             </div>
 
             {/* BOTOES DE MODOS DE JOGOS TELA WRAPPER */}
-            <div className="flex gap-40 py-16">
+            <div className="grid grid-cols-4 gap-10 py-16 w-full px-40">
                 {/* SURVIVAL */}
                 <button className="border-t-4 border-t-emerald-500 bg-[#140b2b] items-center justify-center p-4 text-xl font-sans rounded-xl w-60 hover:scale-110 duration-400 transition-all cursor-pointer">
                     <div className="flex flex-row items-center justify-center gap-6">

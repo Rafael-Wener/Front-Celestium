@@ -15,7 +15,7 @@ export default function LoginPage() {
       return;
     }
 
-    const res = await fetch("http://10.200.80.81:3005/users", {
+    const res = await fetch("http://10.200.80.81:3005/auth", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, senha }),
