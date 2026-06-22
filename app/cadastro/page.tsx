@@ -82,6 +82,8 @@ export default function RegisterPage() {
           </div>
         </form>
 
+        {erro && <p className="text-red-400 text-xs mt-4">{erro}</p>}
+
         {/* BOTÃO DE LOGIN */}
         <div className="pt-6 w-full px-8">
           <button
@@ -91,7 +93,7 @@ export default function RegisterPage() {
           </button>
         </div>
 
-        {erro && <p className="text-red-400 text-xs mt-4">{erro}</p>}
+        
 
         {/* LINK DE ESQUECEU SUA SENHA PRECISA SER COLOCADO E CRIADO PAGINA DE CRIAR SENHA */}
         <div className="pt-6 w-full px-8 items-center justify-center flex">

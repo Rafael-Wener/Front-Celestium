@@ -57,7 +57,7 @@ export default function FooterCeslestium() {
                         {/* SUBCONTEUDOS */}
                         <div className="flex flex-col items-start justify-center gap-2 text-xs text-gray-400">
                             <button className="hover:text-purple-400/90 cursor-pointer">Início</button>
-                            <Link href="/loja">
+                            <Link href="/celestium/loja">
                                 <button className="hover:text-purple-400/90 cursor-pointer">Loja</button>
                             </Link>
                             <button className="hover:text-purple-400/90 cursor-pointer">Modos</button>

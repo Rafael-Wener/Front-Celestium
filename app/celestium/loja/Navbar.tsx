@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function NavbarCelestium() {
+export default function NavBarLoja() {
   return (
     // TELA BACKGROUND 
     <div className="bg-gray-950 w-full h-22 flex items-center justify-between px-40">
@@ -12,10 +12,10 @@ export default function NavbarCelestium() {
 
       {/* PARTE DO MENU */}
       <div className="flex items-center gap-6 justify-center font-bold">
+        <a href="/celestium" className="text-white text-sm border-b-2 border-transparent hover:border-b-purple-500 transition-colors duration-300">Voltar</a>
         <a href="#" className="text-white text-sm border-b-2 border-transparent hover:border-b-purple-500 transition-colors duration-300">Ínicio</a>
-        <a href="/celestium/loja" className="text-white text-sm border-b-2 border-transparent hover:border-b-purple-500 transition-colors duration-300">Loja</a>
-        <a href="#" className="text-white text-sm border-b-2 border-transparent hover:border-b-purple-500 transition-colors duration-300">Moedas</a>
-        <a href="https://discord.gg/MF2m9DE8s" className="text-white text-sm border-b-2 border-transparent hover:border-b-purple-500 transition-colors duration-300">Discord</a>
+        <a href="#" className="text-white text-sm border-b-2 border-transparent hover:border-b-purple-500 transition-colors duration-300">VIPS</a>
+        <a href="#" className="text-white text-sm border-b-2 border-transparent hover:border-b-purple-500 transition-colors duration-300">Pacotes</a>
         <a href="#" className="text-white text-sm border-b-2 border-transparent hover:border-b-purple-500 transition-colors duration-300">Suporte</a>
       </div>
 

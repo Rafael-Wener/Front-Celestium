@@ -14,17 +14,17 @@ export default function LoginReminderCelestium() {
                     <h1 className="font-bold text-white text-xl">Antes de acessar a loja, faça login ou crie sua conta.</h1>
                     <span className="text-gray-400">É rápido, seguro e você garante acesso a todos os benefícios!</span>
                 </div>
+
                 {/* BOTAO DE LOGAR NO CONTAINER */}
                 <button className="flex flex-row items-center justify-center ml-90 bg-purple-700 rounded-md h-10 w-47 hover:bg-purple-600 transition-all hover:scale-105 cursor-pointer duration-500">
                     <img src="/usuario.png" alt="icone de usuario" className="h-4 w-4 invert m-2 font-bold" />
-                    <span className="flex font-bold">Entrar na conta</span>
+                    <a href="/login" className="flex font-bold">Entrar na conta</a>
                 </button>
 
                 {/* BOTAO DE CADASTRAR NO CONTAINER */}
-
                 <button className="flex flex-row items-center justify-center bg-purple-950/40 rounded-md h-10 w-47 border border-purple-900 hover:bg-purple-800/40 hover:border-purple-800 transition-all hover:scale-105 cursor-pointer duration-500">
                     <img src="/adicionar-usuario.png" alt="icone de cadastrar usuario" className="h-5 w-5 invert m-2" />
-                    <span className="font-bold font-sans">Criar cadastro</span>
+                    <a href="/cadastro" className="font-bold font-sans">Criar cadastro</a>
                 </button>
             </div>
         </div>

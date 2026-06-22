@@ -33,7 +33,7 @@ export default function HeaderCelestium() {
           </Link>
 
           {/* LOJA BUTTON */}
-          <Link href="/loja">
+          <Link href="/celestium/loja">
             <button className="bg-[#13092A] hover:bg-[#1c0e3d] border border-purple-900 text-white font-bold py-4 px-6 rounded-md mt-6 flex items-center justify-center gap-6 cursor-pointer hover:scale-105 duration-500 transition-all">
               <img
                 src="/cesta-de-compras.png"
