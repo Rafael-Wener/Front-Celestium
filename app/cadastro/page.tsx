@@ -1,5 +1,5 @@
 "use client";
-
+import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -14,22 +14,83 @@ export default function RegisterPage() {
     setErro("");
 
     if (!nickname || !email || !password) {
+      toast.error("Preencha todos os campos!", {
+        icon: (
+          <img
+            src="/icon/red.png"
+            alt="Erro"
+            className="w-7 h-7 object-contain"
+          />
+        ),
+      });
+
       setErro("Preencha todos os campos!");
       return;
     }
 
+<<<<<<< HEAD
     const res = await fetch("http://10.200.80.81:3005/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ nickname, email, password }),
     });
+=======
+    try {
+      const res = await fetch("http://10.200.80.81:3005/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nickname, email, password }),
+      });
+>>>>>>> 304599502248371a821ec54019d31415ed2098df
 
-    const data = await res.json();
+      const data = await res.json();
 
+<<<<<<< HEAD
     if (res.ok) {
       router.push("/celestium");
     } else {
       setErro(data.message || "Erro ao criar conta!");
+=======
+      if (res.ok) {
+        toast.success("Conta criada com sucesso!", {
+          icon: (
+            <img
+              src="/icon/diamante.png"
+              alt="Diamante"
+              className="w-7 h-7 object-contain"
+            />
+          ),
+        });
+
+        setTimeout(() => {
+          router.push("/login");
+        }, 900);
+      } else {
+        toast.error(data.message || "Erro ao criar conta!", {
+          icon: (
+            <img
+              src="/icon/red.png"
+              alt="Erro"
+              className="w-7 h-7 object-contain"
+            />
+          ),
+        });
+
+        setErro(data.message || "Erro ao criar conta!");
+      }
+    } catch (error) {
+      toast.error("Erro ao conectar com o servidor!", {
+        icon: (
+          <img
+            src="/icon/red.png"
+            alt="Erro"
+            className="w-7 h-7 object-contain"
+          />
+        ),
+      });
+
+      setErro("Erro ao conectar com o servidor!");
+>>>>>>> 304599502248371a821ec54019d31415ed2098df
     }
   }
 
