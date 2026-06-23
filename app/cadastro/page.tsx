@@ -4,24 +4,24 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function RegisterPage() {
-  const [nick, setNick] = useState("");
+  const [nickname, setNickname] = useState("");
   const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
+  const [password, setPassword] = useState("");
   const [erro, setErro] = useState("");
   const router = useRouter();
 
   async function handleRegister() {
     setErro("");
 
-    if (!nick || !email || !senha) {
+    if (!nickname || !email || !password) {
       setErro("Preencha todos os campos!");
       return;
     }
 
-    const res = await fetch("http://10.200.80.81:3005/register", {
+    const res = await fetch("http://10.200.80.81:3005/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ nick, email, senha }),
+      body: JSON.stringify({ nickname, email, password }),
     });
 
     const data = await res.json();
@@ -36,7 +36,7 @@ export default function RegisterPage() {
   return (
     <div className="min-h-screen w-full bg-[#080011] text-white relative overflow-hidden">
       {/* FUNDO */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-purple-950/40 to-black/80 " ></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-purple-950/40 to-black/80 "></div>
 
       <div className="relative z-10 min-h-screen grid grid-cols-1 lg:grid-cols-2">
         {/* LADO ESQUERDO */}
@@ -89,8 +89,8 @@ export default function RegisterPage() {
                   className="p-4 bg-zinc-950/80 border border-purple-500/25 font-light rounded-xl w-full hover:border-purple-500/60 focus:border-purple-500/60 focus:outline-none text-purple-100 placeholder:text-zinc-500"
                   placeholder="SeuNick1234"
                   type="text"
-                  value={nick}
-                  onChange={(e) => setNick(e.target.value)}
+                  value={nickname}
+                  onChange={(e) => setNickname(e.target.value)}
                 />
 
                 <h2 className="pt-5 font-semibold">Email</h2>
@@ -107,8 +107,8 @@ export default function RegisterPage() {
                   className="p-4 bg-zinc-950/80 border border-purple-500/25 font-light rounded-xl w-full hover:border-purple-500/60 focus:border-purple-500/60 focus:outline-none text-purple-100 placeholder:text-zinc-500"
                   placeholder="Digite sua senha"
                   type="password"
-                  value={senha}
-                  onChange={(e) => setSenha(e.target.value)}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
             </div>

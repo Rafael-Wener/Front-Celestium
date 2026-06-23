@@ -3,6 +3,7 @@ import HeaderCelestium from "./HeaderCelestium";
 import NavbarCelestium from "./NavbarCelestium";
 import GameModesCelestium from "./GameModes";
 import LoginReminderCelestium from "./LoginReminder";
+import DiscordReminderCelestium from "./DiscordReminder";
 
 export default function CelestiumPage() {
   return (
@@ -11,6 +12,7 @@ export default function CelestiumPage() {
       <HeaderCelestium />
       <LoginReminderCelestium />
       <GameModesCelestium />
+      <DiscordReminderCelestium />
       <FooterCeslestium />
     </div>
   );

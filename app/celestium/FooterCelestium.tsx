@@ -12,7 +12,7 @@ export default function FooterCeslestium() {
                 <div className="flex flex-col items-start justify-center">
                     {/* CELESTIUM SERVIÇOS */}
                     <div className="flex flex-row items-center justify-center">
-                        <img src="/logoCeslestiumtrue.jpeg" alt="logo Celestium" className="h-10 w-10 mr-2 rounded-md" />
+                        <img src="/logoCeslestiumtrue.png" alt="logo Celestium" className="h-10 w-10 mr-2 rounded-md" />
                         <h1 className="flex font-bold">Celestium</h1>
                         <span className="font-bold text-purple-500">MC</span>
                     </div>
@@ -107,7 +107,6 @@ export default function FooterCeslestium() {
             <div className="flex w-full items-center justify-center mt-10">
                 <div className="text-gray-500 text-xs">© 2026 CelestiumMC. Todos os direitos reservados. Desenvolvido para máxima fidelidade visual.</div>
             </div>
-
         </div>
     )
 }

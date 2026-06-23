@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function GameModesCelestium() {
-    const [aberto, setAberto] = useState<string | null>(null);
+    const [aberto, setAberto] = useState<string | null>("survival");
 
     function AbrirTabela(modo: string) {
         setAberto(aberto === modo ? null : modo);
@@ -17,7 +17,7 @@ export default function GameModesCelestium() {
 
             <div className="grid grid-cols-4 gap-10 py-16 w-full px-40">
 
-                {/* SURVIVAL COR É EMERAL-500*/}
+                {/* SURVIVAL COR É EMERALD-500*/}
                 <div className="flex flex-col">
                     <button onClick={() => AbrirTabela("survival")} className="border-t-4 border-t-emerald-500 bg-[#140b2b] items-center justify-center p-4 text-xl font-sans rounded-xl hover:scale-110 duration-400 transition-all cursor-pointer">
                         <div className="flex flex-row items-center justify-center gap-6">
@@ -30,7 +30,7 @@ export default function GameModesCelestium() {
                         </div>
                     </button>
 
-                    {/* TELA ABERTA */}
+                    {/* TELA ABERTA COR É EMERALD-500 */}
                     <div className={`overflow-hidden transition-all duration-500 ease-in-out border-b-2 border-b-emerald-500 rounded-xl ${aberto === "survival" ? "max-h-96 opacity-100 mt-2" : "max-h-0 opacity-0"}`}>
                         <div className="bg-[#140b2b] rounded-xl p-4 text-sm text-gray-300 flex flex-col gap-2">
 

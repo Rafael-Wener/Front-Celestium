@@ -6,7 +6,7 @@ export default function NavBarLoja() {
     <div className="bg-gray-950 w-full h-22 flex items-center justify-between px-40">
       {/* PARTE DO LOGO */}
       <div className="flex items-center justify-center gap">
-        <img src="/logoCeslestiumtrue.jpeg" alt="Logo Celestium" className="h-12 w-12 rounded-md mr-4" />
+        <img src="/logoCeslestiumtrue.png" alt="Logo Celestium" className="h-12 w-12 rounded-md mr-4" />
         <span className="text-white text-lg font-bold">Celestium</span> <span className="text-purple-500 text-lg font-bold">MC</span>
       </div>
 

@@ -5,12 +5,12 @@ import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
+  const [password, setPassword] = useState("");
   const [erro, setErro] = useState("");
   const router = useRouter();
 
   async function handleLogin() {
-    if (!email || !senha) {
+    if (!email || !password) {
       setErro("Preencha todos os campos!");
       return;
     }
@@ -18,7 +18,7 @@ export default function LoginPage() {
     const res = await fetch("http://10.200.80.81:3005/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, senha }),
+      body: JSON.stringify({ email, password }),
     });
 
     const data = await res.json();
@@ -97,8 +97,8 @@ export default function LoginPage() {
                   className="p-4 bg-zinc-950/80 border border-purple-500/25 rounded-xl w-full hover:border-purple-500/60 focus:border-purple-500/60 focus:outline-none text-purple-100 placeholder:text-zinc-500"
                   placeholder="Digite sua senha"
                   type="password"
-                  value={senha}
-                  onChange={(e) => setSenha(e.target.value)}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
             </div>
