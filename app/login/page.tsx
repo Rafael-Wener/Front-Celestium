@@ -1,5 +1,5 @@
 "use client";
-
+import { toast } from "sonner";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -10,23 +10,71 @@ export default function LoginPage() {
   const router = useRouter();
 
   async function handleLogin() {
+    setErro("");
+
     if (!email || !password) {
+      toast.error("Preencha todos os campos!", {
+        icon: (
+          <img
+            src="/icon/red.png"
+            alt="Erro"
+            className="w-7 h-7 object-contain"
+          />
+        ),
+      });
+
       setErro("Preencha todos os campos!");
       return;
     }
 
-    const res = await fetch("http://10.200.80.81:3005/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password }),
-    });
+    try {
+      const res = await fetch("http://10.200.80.81:3005/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
 
-    const data = await res.json();
+      const data = await res.json();
 
-    if (res.ok) {
-      router.push("/celestium");
-    } else {
-      setErro(data.message || "Usuário ou senha incorretos!");
+      if (res.ok) {
+        toast.success("Bem-vindo ao CelestiumMC!", {
+          icon: (
+            <img
+              src="/icon/espada.png"
+              alt="Espada"
+              className="w-7 h-7 object-contain"
+            />
+          ),
+        });
+
+        setTimeout(() => {
+          router.push("/celestium");
+        }, 900);
+      } else {
+        toast.error(data.message || "Usuário ou senha incorretos!", {
+          icon: (
+            <img
+              src="/icon/red.png"
+              alt="Erro"
+              className="w-7 h-7 object-contain"
+            />
+          ),
+        });
+
+        setErro(data.message || "Usuário ou senha incorretos!");
+      }
+    } catch (error) {
+      toast.error("Erro ao conectar com o servidor!", {
+        icon: (
+          <img
+            src="/icon/red.png"
+            alt="Erro"
+            className="w-7 h-7 object-contain"
+          />
+        ),
+      });
+
+      setErro("Erro ao conectar com o servidor!");
     }
   }
 
@@ -38,7 +86,7 @@ export default function LoginPage() {
       <div className="relative z-10 min-h-screen grid grid-cols-1 lg:grid-cols-2">
         <div className="hidden lg:flex flex-col items-center justify-center text-center px-10">
           <img
-          src="/logoCeslestiumtrue.png"
+            src="/logoCeslestiumtrue.png"
             alt="Logo"
             className="w-72 mb-8 drop-shadow-[0_0_35px_rgba(168,85,247,0.7)]"
           />
@@ -55,8 +103,6 @@ export default function LoginPage() {
             Acesse a loja oficial, gerencie sua conta e desbloqueie tudo que
             nosso servidor oferece.
           </p>
-
-         
         </div>
 
         <div className="flex flex-col items-center justify-center px-6">
