@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function FooterCeslestium() {
     return (
-        //         // TELA WRAPPER E BACKGROUND
+        // TELA WRAPPER E BACKGROUND
         <div className="flex flex-col w-full bg-black h-80 justify-center px-40">
 
             {/* LINHA PRINCIPAL - ESQUERDA E DIREITA */}

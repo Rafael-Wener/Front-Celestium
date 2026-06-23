@@ -18,7 +18,7 @@ export default function RegisterPage() {
       return;
     }
 
-    const res = await fetch("http://10.200.80.81:3005/", {
+    const res = await fetch("http://10.200.80.81:3005/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ nickname, email, password }),
@@ -27,7 +27,7 @@ export default function RegisterPage() {
     const data = await res.json();
 
     if (res.ok) {
-      router.push("/login");
+      router.push("/celestium");
     } else {
       setErro(data.message || "Erro ao criar conta!");
     }

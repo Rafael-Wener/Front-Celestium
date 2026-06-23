@@ -24,6 +24,7 @@ export default function LoginPage() {
     const data = await res.json();
 
     if (res.ok) {
+      localStorage.setItem("token", data.token);
       router.push("/celestium");
     } else {
       setErro(data.message || "Usuário ou senha incorretos!");

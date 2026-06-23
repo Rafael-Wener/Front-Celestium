@@ -1,6 +1,15 @@
+"use client";
+
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function NavbarCelestium() {
+const router = useRouter();
+
+function handleLogout() {
+  localStorage.removeItem("token");
+}
+
   return (
     // TELA BACKGROUND 
     <div className="bg-gray-950 w-full h-22 flex items-center justify-between px-40">
@@ -48,6 +57,16 @@ export default function NavbarCelestium() {
               <span className="">Discord</span>
             </div>
           </Link>
+        </button>
+
+        {/* BOTAO PARA DESLOGAR */}
+        <button 
+        onClick={handleLogout}
+        className="cursor-pointer flex flex-row text-gray-400 transition-all duration-400 hover:text-white group">
+          <div className="flex ml-2">
+            <img src="/opcao-de-sair.png" alt="Deslogar" className="w-5 h-5 invert mr-2 opacity-60 group-hover:opacity-100 transition-all duration-300" />
+            <span className="font-bold text-sm">Sair</span>
+          </div>
         </button>
       </div>
     </div>
