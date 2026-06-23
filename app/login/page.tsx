@@ -36,13 +36,6 @@ export default function LoginPage() {
 
       const data = await res.json();
 
-<<<<<<< HEAD
-    if (res.ok) {
-      localStorage.setItem("token", data.token);
-      router.push("/celestium");
-    } else {
-      setErro(data.message || "Usuário ou senha incorretos!");
-=======
       if (res.ok) {
         toast.success("Bem-vindo ao CelestiumMC!", {
           icon: (
@@ -82,7 +75,6 @@ export default function LoginPage() {
       });
 
       setErro("Erro ao conectar com o servidor!");
->>>>>>> 304599502248371a821ec54019d31415ed2098df
     }
   }
 

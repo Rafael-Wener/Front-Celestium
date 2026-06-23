@@ -28,29 +28,15 @@ export default function RegisterPage() {
       return;
     }
 
-<<<<<<< HEAD
-    const res = await fetch("http://10.200.80.81:3005/users", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ nickname, email, password }),
-    });
-=======
     try {
-      const res = await fetch("http://10.200.80.81:3005/", {
+      const res = await fetch("http://10.200.80.81:3005/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ nickname, email, password }),
       });
->>>>>>> 304599502248371a821ec54019d31415ed2098df
 
       const data = await res.json();
 
-<<<<<<< HEAD
-    if (res.ok) {
-      router.push("/celestium");
-    } else {
-      setErro(data.message || "Erro ao criar conta!");
-=======
       if (res.ok) {
         toast.success("Conta criada com sucesso!", {
           icon: (
@@ -90,7 +76,6 @@ export default function RegisterPage() {
       });
 
       setErro("Erro ao conectar com o servidor!");
->>>>>>> 304599502248371a821ec54019d31415ed2098df
     }
   }
 
