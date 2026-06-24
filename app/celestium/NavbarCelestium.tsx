@@ -2,14 +2,21 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function NavbarCelestium() {
-const router = useRouter();
+  const router = useRouter();
+  const [nickname, setNickname] = useState("");
 
-function handleLogout() {
-  localStorage.removeItem("token");
-}
+  useEffect(() => {
+    const nick = localStorage.getItem("nickname");
+    if (nick) setNickname(nick);
+  }, []);
 
+  function handleLogout() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("nickname");
+  }
   return (
     // TELA BACKGROUND 
     <div className="bg-gray-950 w-full h-22 flex items-center justify-between px-40">
@@ -32,12 +39,14 @@ function handleLogout() {
       {/* TELA WRAPPER */}
       <div className="flex justify-center items-center gap-1">
 
-        {/* BOTAO DE LOGAR */}
+        {/* BOTAO DE ENTRAR/LOGAR */}
         <button className="flex items-center justify-center cursor-pointer group">
           <div className="flex items-center justify-center">
             <img src="/usuario.png" alt="User Icon" className="w-4 h-4 invert opacity-60 group-hover:opacity-100 transition-all duration-300" />
             <Link href="/login">
-              <span className="text-gray-400 text-sm font-bold rounded-md px-4 py-1 transition-colors duration-300 group-hover:text-white">Entrar</span>
+              <span className="text-gray-400 text-sm font-bold rounded-md px-4 py-1 transition-colors duration-300 group-hover:text-white">
+                {nickname ? nickname : "Entrar"}
+              </span>
             </Link>
           </div>
         </button>
@@ -60,9 +69,9 @@ function handleLogout() {
         </button>
 
         {/* BOTAO PARA DESLOGAR */}
-        <button 
-        onClick={handleLogout}
-        className="cursor-pointer flex flex-row text-gray-400 transition-all duration-400 hover:text-white group">
+        <button
+          onClick={handleLogout}
+          className="cursor-pointer flex flex-row text-gray-400 transition-all duration-400 hover:text-white group">
           <div className="flex ml-2">
             <img src="/opcao-de-sair.png" alt="Deslogar" className="w-5 h-5 invert mr-2 opacity-60 group-hover:opacity-100 transition-all duration-300" />
             <span className="font-bold text-sm">Sair</span>

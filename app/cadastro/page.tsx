@@ -49,7 +49,7 @@ export default function RegisterPage() {
         });
 
         setTimeout(() => {
-          router.push("/login");
+          router.push("/celestium");
         }, 900);
       } else {
         toast.error(data.message || "Erro ao criar conta!", {

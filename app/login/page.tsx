@@ -37,6 +37,8 @@ export default function LoginPage() {
       const data = await res.json();
 
       if (res.ok) {
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("nickname", data.user.nickname);
         toast.success("Bem-vindo ao CelestiumMC!", {
           icon: (
             <img
