@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { toast } from "sonner";
 
 export default function NavbarCelestium() {
   const router = useRouter();
@@ -13,11 +14,15 @@ export default function NavbarCelestium() {
     if (nick) setNickname(nick);
   }, []);
 
-  function handleLogout() {
+function handleLogout() {
     localStorage.removeItem("token");
     localStorage.removeItem("nickname");
-  }
+    setNickname("");
+    toast.success("Você saiu da conta!");
+}
+
   return (
+    
     // TELA BACKGROUND 
     <div className="bg-gray-950 w-full h-22 flex items-center justify-between px-40">
       {/* PARTE DO LOGO */}

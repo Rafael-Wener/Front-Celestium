@@ -38,6 +38,7 @@ export default function RegisterPage() {
       const data = await res.json();
 
       if (res.ok) {
+        
         toast.success("Conta criada com sucesso!", {
           icon: (
             <img
