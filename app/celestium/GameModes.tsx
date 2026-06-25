@@ -12,7 +12,7 @@ export default function GameModesCelestium() {
     return (
         <div className="flex flex-col justify-center items-center w-full py-16 bg-white">
             <div className="flex flex-col justify-center items-center w-full">
-                <div className="text-purple-700 font-bold text-xs">// NOSSOS MODOS DE JOGO</div>
+                <div className="text-purple-400 font-bold text-xs">// NOSSOS MODOS DE JOGO</div>
             </div>
 
             <div className="grid grid-cols-4 gap-10 py-16 w-full px-40">

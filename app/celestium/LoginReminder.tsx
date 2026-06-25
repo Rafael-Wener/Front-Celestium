@@ -18,11 +18,11 @@ export default function LoginReminderCelestium() {
         // BACKGROUND E TELA WRAPPER
         <div className="bg-white flex flex-col w-full items-start px-40">
 
-            {/* Login page / ESSA PARTE PRECISA DE ATENÇÃO, PRECISA SER ADICIONADO UMA FUNÇÃO QUE CHAME ELA CASO O USUARIA NAO ESTEJA LOGADO */}
-            <div className="flex gap-4 bg-[#140b2b] w-full p-10 rounded-2xl shadow-black shadow-[2px_2px_10px_2px] mt-15 items-center justify-center">
+            {/* Login page */}
+            <div className="flex gap-4 bg-[#140b2b] w-full p-10 rounded-2xl shadow-[2px_2px_10px_2px] shadow-black mt-15 items-center justify-center">
                 {/* BORDA DA IMAGEM NÃO AGUENTO MAIS CENTRALIZAR DIVS MDS */}
                 {/* LEMBRETE DE LOGIN */}
-                <div className="border border-purple-900 rounded-2xl h-16 w-16 flex items-center justify-center bg-[#3B076499] shadow-[0_0_4px_#C084FC]">
+                <div className="border border-purple-900 rounded-2xl h-16 w-16 flex items-center justify-center bg-[#3B076499]">
                     <img src="/cadeado aberto.png" className="[filter:invert(40%)_sepia(80%)_saturate(500%)_hue-rotate(240deg)] h-10 w-10" alt="cadeado desbloqueado" />
                 </div>
                 <div className="flex flex-col">
