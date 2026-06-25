@@ -1,9 +1,9 @@
 import FooterCeslestium from "./FooterCelestium";
 import HeaderCelestium from "./HeaderCelestium";
 import NavbarCelestium from "./NavbarCelestium";
-import GameModesCelestium from "./GameModes";
-import LoginReminderCelestium from "./LoginReminder";
-import DiscordReminderCelestium from "./DiscordReminder";
+import GameModesCelestium from "./GameModesCelestium";
+import LoginReminderCelestium from "./LoginReminderCelestium";
+import DiscordReminderCelestium from "./DiscordReminderCelestium";
 
 export default function CelestiumPage() {
   return (
