@@ -1,20 +1,20 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
 import { toast } from "sonner";
+import {
+  avisarMudancaLocalStorage,
+  useLocalStorageItem,
+} from "../utils/useLocalStorageItem";
 
 export default function NavbarCelestium() {
-  const [nickname, setNickname] = useState(() => {
-    if (typeof window === "undefined") return "";
-    return localStorage.getItem("nickname") || "";
-  });
+  const nickname = useLocalStorageItem("nickname");
 
   function handleLogout() {
     localStorage.removeItem("token");
     localStorage.removeItem("userId");
     localStorage.removeItem("nickname");
-    setNickname("");
+    avisarMudancaLocalStorage();
     toast.success("Você saiu da conta!");
   }
 
