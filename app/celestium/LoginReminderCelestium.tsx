@@ -1,16 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function LoginReminderCelestium() {
     
     // PARTE PARA VERIFICAR SE ESTA LOGADO, SE CASO ESTEJA LOGADO A PARTE DO LOGIN REMINDER DESAPAREÇERA!
-    const [logado, setLogado] = useState(false);
-
-    useEffect(() => {
-        const token = localStorage.getItem("token");
-        if (token) setLogado(true);
-    }, []); 
+    const [logado] = useState(() => {
+        if (typeof window === "undefined") return false;
+        return Boolean(localStorage.getItem("token"));
+    });
 
     if (logado) return null;
 

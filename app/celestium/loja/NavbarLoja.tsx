@@ -1,21 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { toast } from "sonner";
 
 export default function NavbarCelestium() {
-  const router = useRouter();
-  const [nickname, setNickname] = useState("");
-
-  useEffect(() => {
-    const nick = localStorage.getItem("nickname");
-    if (nick) setNickname(nick);
-  }, []);
+  const [nickname, setNickname] = useState(() => {
+    if (typeof window === "undefined") return "";
+    return localStorage.getItem("nickname") || "";
+  });
 
   function handleLogout() {
     localStorage.removeItem("token");
+    localStorage.removeItem("userId");
     localStorage.removeItem("nickname");
     setNickname("");
     toast.success("Você saiu da conta!");
