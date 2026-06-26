@@ -9,7 +9,7 @@ import {
   enviarPedidoLoja,
   type ItemCarrinhoLoja,
 } from "./lojaService";
-import { categoriasLoja, produtosLoja, type ProdutoLoja } from "./produtosLoja";
+import { categoriasLoja, type ProdutoLoja } from "./produtosLoja";
 
 type CategoriaSelecionada = (typeof categoriasLoja)[number];
 
@@ -21,7 +21,7 @@ const formatarPreco = new Intl.NumberFormat("pt-BR", {
 export default function TabelaDeVendas() {
   const [categoriaSelecionada, setCategoriaSelecionada] =
     useState<CategoriaSelecionada>("Todos");
-  const [produtos, setProdutos] = useState<ProdutoLoja[]>(produtosLoja);
+  const [produtos, setProdutos] = useState<ProdutoLoja[]>([]);
   const [produtosDoBackend, setProdutosDoBackend] = useState(false);
   const [carregandoProdutos, setCarregandoProdutos] = useState(true);
   const [carrinho, setCarrinho] = useState<ItemCarrinhoLoja[]>([]);
@@ -41,12 +41,12 @@ export default function TabelaDeVendas() {
       try {
         const produtosBackend = await buscarProdutosLoja(token);
 
-        if (telaAberta && produtosBackend.length > 0) {
+        if (telaAberta) {
           setProdutos(produtosBackend);
           setProdutosDoBackend(true);
         }
       } catch (error) {
-        console.log("Produtos locais carregados:", error);
+        console.log("Nao foi possivel carregar produtos do backend:", error);
       } finally {
         if (telaAberta) setCarregandoProdutos(false);
       }
@@ -174,9 +174,11 @@ export default function TabelaDeVendas() {
       <div className="mb-8 rounded-md border border-purple-100 bg-purple-50 px-4 py-3 text-sm font-semibold text-purple-950">
         {carregandoProdutos
           ? "Carregando produtos do backend..."
-          : produtosDoBackend
-            ? "Produtos carregados do banco do backend."
-            : "Usando produtos locais. Faca login e ligue o backend para finalizar pedidos reais."}
+            : produtosDoBackend
+            ? produtos.length > 0
+              ? "Produtos carregados do banco do backend."
+              : "Banco conectado, aguardando produtos cadastrados."
+            : "Faca login para carregar os produtos direto do banco."}
       </div>
 
       <div className="mb-10 flex flex-wrap gap-3">
@@ -197,6 +199,25 @@ export default function TabelaDeVendas() {
 
       <div className="grid grid-cols-1 gap-8 xl:grid-cols-[1fr_360px]">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 2xl:grid-cols-3">
+          {produtosFiltrados.length === 0 && (
+            <div className="rounded-xl border border-purple-100 bg-[#140b2b] p-8 text-white shadow-[0_8px_24px_rgba(20,11,43,0.18)] md:col-span-2 2xl:col-span-3">
+              <div className="flex flex-col items-center justify-center py-10 text-center">
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-xl border border-purple-800 bg-purple-950/60">
+                  <img
+                    src="/bau-de-tesouro.png"
+                    alt=""
+                    className="h-8 w-8 invert opacity-70"
+                  />
+                </div>
+                <h3 className="text-xl font-bold">Nenhum produto no banco</h3>
+                <p className="mt-2 max-w-md text-sm text-gray-400">
+                  Assim que os produtos forem cadastrados no backend, eles vao
+                  aparecer aqui automaticamente.
+                </p>
+              </div>
+            </div>
+          )}
+
           {produtosFiltrados.map((produto) => (
             <div
               key={produto.id}
