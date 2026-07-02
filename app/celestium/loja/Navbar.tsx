@@ -1,6 +1,4 @@
 import Link from "next/link";
-<<<<<<< HEAD
-<<<<<<< HEAD:app/celestium/loja/NavbarLoja.tsx
 import { toast } from "sonner";
 import {
   avisarMudancaLocalStorage,
@@ -17,11 +15,6 @@ export default function NavbarCelestium() {
     avisarMudancaLocalStorage();
     toast.success("Você saiu da conta!");
   }
-=======
->>>>>>> parent of a48d3a5 (nit fix necessary):app/celestium/loja/Navbar.tsx
-=======
->>>>>>> parent of a48d3a5 (nit fix necessary)
-
 export default function NavBarLoja() {
   return (
     // TELA BACKGROUND 
