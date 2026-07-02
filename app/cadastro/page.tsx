@@ -37,11 +37,8 @@ export default function RegisterPage() {
 
       const data = await res.json();
 
-      if (res.ok) {   
-        if (data.token) localStorage.setItem("token", data.token);
-        if (data.id) localStorage.setItem("userId", data.id);
-        if (data.nickname) localStorage.setItem("nickname", data.nickname);
-
+      if (res.ok) {
+        
         toast.success("Conta criada com sucesso!", {
           icon: (
             <img
