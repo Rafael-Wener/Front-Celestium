@@ -15,6 +15,7 @@ export default function NavbarCelestium() {
     avisarMudancaLocalStorage();
     toast.success("Você saiu da conta!");
   }
+
 export default function NavBarLoja() {
   return (
     // TELA BACKGROUND 
